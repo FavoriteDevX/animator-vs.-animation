@@ -3,58 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stick Figure Life Simulator — 24H Desktop Pet</title>
+    <title>Living Stickman — 24H Interactive Canvas</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <main class="container">
-        <header>
-            <h1>Stick Figure Life Simulator</h1>
-            <p class="subtitle">Upload your stickman PNG sprite, configure its AI traits, and bring it to life on your laptop screen for <strong>24 hours</strong>.</p>
-        </header>
+    <!-- Barra superior discreta de controle -->
+    <header class="top-bar">
+        <div class="brand">
+            <span class="dot" id="status-dot"></span>
+            <h1>Living Stickman</h1>
+        </div>
 
-        <section class="upload-section">
-            <label for="sprite-upload" class="drop-zone" id="drop-zone">
-                <div class="preview-wrapper">
-                    <img id="sprite-preview" alt="Stickman Preview">
-                </div>
-                <span id="upload-text">Click or drag your Stickman PNG here<br><small>(Transparent background recommended)</small></span>
-                <input type="file" id="sprite-upload" accept="image/png, image/jpeg, image/gif, image/webp">
+        <div class="controls">
+            <label for="sprite-input" class="btn-upload">
+                Upload Stickman PNG
+                <input type="file" id="sprite-input" accept="image/png, image/jpeg, image/gif, image/webp">
             </label>
-        </section>
+            <button id="btn-activate" class="btn-primary">Activate (24H)</button>
+            <button id="btn-popout" class="btn-secondary" title="Or drag the stickman outside the browser window!">Pop-out to Desktop</button>
+        </div>
 
-        <section class="traits-panel">
-            <h2>Programmer Mode — AI Configuration</h2>
-            <div class="grid">
-                <div class="control-group">
-                    <label>Speed: <span id="speed-val">4</span></label>
-                    <input type="range" id="stat-speed" min="1" max="10" value="4">
-                </div>
-                <div class="control-group">
-                    <label>Jump Power: <span id="jump-val">12</span></label>
-                    <input type="range" id="stat-jump" min="6" max="20" value="12">
-                </div>
-            </div>
+        <div class="timer-display" id="timer-display">Dormant — Upload or click Activate</div>
+    </header>
 
-            <div class="toggles">
-                <label><input type="checkbox" id="sense-vision" checked> Vision (Chases Mouse)</label>
-                <label><input type="checkbox" id="feeling-happy" checked> Happiness (Random Jumps)</label>
-                <label><input type="checkbox" id="feeling-curious" checked> Curiosity (Talks & Explores)</label>
-            </div>
-        </section>
-
-        <section class="actions">
-            <button id="btn-activate" class="btn primary">BRING TO LIFE (24H CYCLE)</button>
-            <button id="btn-pip" class="btn secondary">FLOAT OVER OTHER APPS (DESKTOP MODE)</button>
-        </section>
-
-        <footer class="status-bar">
-            <div id="life-timer">Status: Dormant (Ready to activate)</div>
-        </footer>
+    <!-- Palco principal onde o boneco vive livremente -->
+    <main id="stage">
+        <div class="hint-overlay" id="hint-text">
+            Tip: Grab your stickman with the mouse and <strong>drag it outside the browser window</strong> to pop it onto your desktop!
+        </div>
+        
+        <!-- Objetos interativos dentro da tela para ele brincar -->
+        <div class="stage-prop" id="prop-box" style="left: 20%; bottom: 20px;">📦</div>
+        <div class="stage-prop" id="prop-ball" style="left: 75%; bottom: 20px;">⚽</div>
     </main>
 
-    <script src="pet-engine.js"></script>
+    <script src="stickman-life.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
