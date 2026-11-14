@@ -1,6 +1,6 @@
 # Animator VS. Animation - Functional Live Stickman
 
-<img width="342" height="221" alt="animator-vs-animation-alan-becker" src="https://github.com/user-attachments/assets/b07dabce-3a9d-4203-bd13-34aea220a4b2" />
+<img width="342" height="221" alt="animator-vs-animation-alan-becker" src="https://github.com/user-attachments/assets/b07dabce-3a9d-4203-bd13-34aea220a4b2" /> <img width="112" height="112" alt="the-dark-lord-alan-becker" src="https://github.com/user-attachments/assets/cbe7cffe-8e51-426d-ae0d-a80367f35656" />
 
 An interactive web application inspired by *Animator vs. Animation*. Upload any stick figure PNG sprite and bring it to life inside your browser—or **drag it outside the browser window** to pop it out onto your laptop's desktop for **24 hours**!
 
