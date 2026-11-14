@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stick Figure Life Simulator</title>
+    <style>
+        body { margin: 0; overflow: hidden; font-family: sans-serif; background: #f0f2f5; }
+        #controls {
+            position: fixed; top: 15px; left: 15px; background: white;
+            padding: 15px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 100; max-width: 280px;
+        }
+        h2 { margin: 0 0 10px 0; font-size: 18px; }
+        label { display: block; font-size: 12px; margin-top: 8px; font-weight: bold; }
+        input[type="file"] { font-size: 12px; margin-top: 4px; width: 100%; }
+        .toggle { margin-top: 12px; display: flex; align-items: center; gap: 8px; font-size: 13px; }
+        #stickfigure {
+            position: absolute; width: 80px; height: 80px;
+            user-select: none; cursor: grab; transition: transform 0.1s;
+        }
+        #stickfigure:active { cursor: grabbing; }
+    </style>
+</head>
+<body>
+
+    <div id="controls">
+        <h2>Stick Figure Maker</h2>
+        <p style="font-size: 12px; color: #555; margin: 0 0 10px 0;">
+            Upload your transparent PNG sprites to bring your character to life!
+        </p>
+
+        <label>Idle Sprite (Standing):</label>
+        <input type="file" id="upload-idle" accept="image/*">
+
+        <label>Walk Sprite (Moving):</label>
+        <input type="file" id="upload-walk" accept="image/*">
+
+        <label>Jump / Action Sprite:</label>
+        <input type="file" id="upload-jump" accept="image/*">
+
+        <div class="toggle">
+            <input type="checkbox" id="chase-mouse">
+            <span>Chase mouse cursor</span>
+        </div>
+    </div>
+
+    <img id="stickfigure" alt="Stick Figure">
+
+    <script src="script.js"></script>
+</body>
+</html>
